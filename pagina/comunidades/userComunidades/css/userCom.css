@@ -1,0 +1,21 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+#container{
+    height: 100%;
+}
+
+body, html{
+    height: 100%;
+    background-color: #333333;
+
+}
+
+
+.svg{
+    cursor: pointer;
+    border-radius: 8px;
+}

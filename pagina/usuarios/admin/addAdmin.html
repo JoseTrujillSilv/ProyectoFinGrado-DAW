@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../jquery-3.6.3.js"></script>
+    <link rel="stylesheet" href="../../../boostrap_arch/bootstrap.min.css">
+    <script src="../../../boostrap_arch/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="../css/usuarios.css">
+    <script src="./addAdmin.js"></script>
+</head>
+<body>
+    <div class="container-fluid p-0">
+        <header>
+            <nav class="navbar navbar-expand-sm navbar-dark p-2" style="background: none;">
+                <div class="container-fluid">
+                  <img src="../../../img/logo.png" alt="" width="60px" height="60px"  style="margin-right: 10px;">
+                  <button class="navbar-toggler border-warning" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                    <span><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#ffc107" class="bi bi-list" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                    </svg></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav">
+                      <li class="nav-item">
+                        <a class="nav-link text-warning" href="../../../index.html">HOME</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link text-warning" href="../../indice.html">Atras</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </nav> 
+        </header>
+        <main>
+                <div class="row justify-content-center mt-3 mt-lg-0 g-0">
+                    <div class="bg-light rounded" style="width: 400px;">
+                        <div class="row">
+                            <div class="col-12 mt-4 d-flex justify-content-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" fill="#ffc107" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                                  </svg>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center py-3">
+                            <div class="col-10 d-flex text-center">
+                                <form action="./addAdmin.php" method="post" enctype="multipart/form-data">
+                                    <input type="hidden" id="idCom" name="idCom">
+                                    <div>
+                                        <label class="fs-5" for="name">Nombre de usuario:</label>
+                                    </div>
+                                    <div>
+                                        <div class="input-group">
+                                            <input id="name" name="name" type="text" class="form-control bg-transparent borderInc" placeholder="Nombre de usuario" aria-label="Input group example" aria-describedby="basic-addon1" required>
+                                          </div>
+                                    </div>
+                                    <div class="mt-2">
+                                        <label class="fs-5" for="password">Contraseña:</label>
+                                    </div>
+                                    <div class="d-flex justify-content-center">
+                                        <div class="input-group">
+                                            <span id="ojo" class="input-group-text" id="basic-addon1">
+                                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                                <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
+                                <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
+                              </svg>
+                                    </span>
+                                    <input id="password" name="password" type="password" class="form-control bg-transparent borderInc" placeholder="password" aria-label="Input group example" aria-describedby="basic-addon1" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}" required data-bs-toggle="tooltip" title="La contraseña debe llevar una mayúscula, una minúscula y un dígito y ser de 8 carácteres como mínimo">
+                                          </div>
+                                    </div>
+                                    <div class="mt-4">
+                                        <div class="col-12 d-flex justify-content-center">
+                                            <label for="addImage" class="btn btn-dark">Añade tu Imagen</label>
+                                        <input id="addImage" name="addImage" style="visibility:hidden; width: 2%;" type="file">
+                                        </div>
+                                        <button class="btn btn-warning" type="submit">Enviar</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </main>
+    </div>
+</body>
+</html>

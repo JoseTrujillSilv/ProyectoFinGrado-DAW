@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../jquery-3.6.3.js"></script>
+    <link rel="stylesheet" href="../../boostrap_arch/bootstrap.min.css">
+    <script src="../../boostrap_arch/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="./css/accesPrinc.css">
+    <script src="./acces.js"></script>
+    <title>Acceso Principal De Usuario</title>
+</head>
+<body>
+    <div id="container" class="container-fluid">
+        <header>
+            <div class="row align-items-center py-3">
+                <div class="col-6 col-sm-8">
+                    <div class="offcanvas offcanvas-start bg-warning" id="demo">
+                        <div class="offcanvas-header">
+                          <h1 class="offcanvas-title">Elige una opción</h1>
+                          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <a href="../../index.html" data-toggle="tooltip" title="Vuelve a tu inicio" class="text-decoration-none btn btn-dark" >HOME</a>
+                          <a id="inicio" data-toggle="tooltip" title="Vuelve a tu inicio" class="text-decoration-none btn btn-dark" >Inicio</a>
+                            <a id="explorar" class="text-decoration-none btn btn-dark" href="#" data-toggle="tooltip" title="busca a tus amigos">Explorar</a>
+                            <div class="row mt-3">
+                                <div class="col">
+                                    <a id="misTarians" class="text-decoration-none btn btn-dark" href="" data-toggle="tooltip" title="busca a tus amigos">Mis tarians</a>
+                                    <a id="favoritos" class="text-decoration-none btn btn-dark" href="" data-toggle="tooltip" title="busca a tus amigos">Favoritos<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill mb-1 mx-1" viewBox="0 0 16 16">
+                                        <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                                      </svg></a>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                      
+                      <!-- Button to open the offcanvas sidebar -->
+                      <button class="btn btn-warning mx-5" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                          </svg>
+                      </button>
+                </div>
+                <div class="col-4 text-end px-5">
+                    <img src="../../img/logo.png" alt="logo" style="width: 80px; height: 80px;">
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="row text-center justify-content-center align-items-center mx-lg-5 mx-0">
+                <div class="bg-light" style="border-radius: 8px; width: 200px;">
+                    <div class="mt-3">
+                        <img id="fotoPerfil" class="rounded-circle" src="" alt="" style="width: 170px; height: 150px;">
+                    </div>
+                    <div class="col-12 my-4">
+                    <span>Perfil de:</span>
+                    <br>
+                    <span id="nombrePerfil"></span>
+                    </div>
+                </div>
+                <div class="mt-5 mt-lg-0 mx-0 mx-lg-4 bg-warning mb-5 mb-lg-0" style="border-radius: 8px; margin-left: 20px; width: 600px;">
+                    <div class="row">
+                        <form id="form" action="./mostrar/insertaTarians.php" method="post" enctype="multipart/form-data">
+                            <input type="hidden" name="hastags" id="hastags">
+                            <input name="idUser" id="idUser" type="hidden">
+                            <input type="hidden" name="fotoUser" id="fotoUser">
+                            <input type="hidden" name="nameUser" id="nameUser">
+                        <div class="col text-start">
+                            <h3 class="fst-italic fw-bold m-2">Escribe tu tarian:</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <textarea id="textArea" class="col-12" name="text" maxlength="500" id="text" rows="10" placeholder="Estoy escribiendo mi primer post....(puedes escribir un máximo de 500 palabras.)" required></textarea>
+                            <div class="row">
+                                <div class="col">
+                                    
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div id="colFiles" class="col d-flex justify-content-center align-items-center p-2" style="visibility: hidden;">
+                                    <div class="card w-auto" style="display: none;">
+                                        <img id="imgs01" width="0px" height="0px" src="" alt="" style="opacity: 100%;">
+                                        <div class="card-img-overlay d-flex justify-content-end align-items-start">
+                                          <a href="#" class="btn btn-warning cerrar" title="Pulsa para eliminar la imagen" ><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 96 960 960" width="30"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a>
+                                        </div>
+                                      </div>
+                                    
+                                      <div class="card" style="display: none;">    
+                                    <video id="video1" style="opacity: 100%;" width="0px" height="0px"   src="" loop autoplay></video>
+                                        <div class="card-img-overlay d-flex justify-content-end align-items-start">
+                                            <a href="#" class="btn btn-warning cerrar" title="Pulsa para eliminar el video" ><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 96 960 960" width="30"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a>
+                                          </div>
+                                      </div>
+                                    <iframe id="pdf1" style="opacity: 100%;" width="0px" height="0px" src=""   frameborder="0"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row p-3">
+                        <div class="col text-start">
+                            <input type="file" name="file1" id="file1" accept=".pdf,.mp4,.gif,.jpg,.png" style="visibility: hidden; width: 0px;">
+                            <label id="labelFile" for="file1" data-toggle="tooltip" title="Solo admite: mp4, png, jpg y gifs"><svg type="file" name="file" id="file" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-paperclip svg" viewBox="0 0 16 16">
+                                <path d="M4.5 3a2.5 2.5 0 0 1 5 0v9a1.5 1.5 0 0 1-3 0V5a.5.5 0 0 1 1 0v7a.5.5 0 0 0 1 0V3a1.5 1.5 0 1 0-3 0v9a2.5 2.5 0 0 0 5 0V5a.5.5 0 0 1 1 0v7a3.5 3.5 0 1 1-7 0V3z"/>
+                              </svg></label>
+                                
+                              <a id="confi" class="text-dark" href=""><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-gear-fill svg" viewBox="0 0 16 16">
+                                <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
+                              </svg></a>
+                             
+                              
+                        </div>
+                        <div class="col text-center text-sm-start">
+                            <button type="submit" class="btn btn-dark px-4 mb-3 mb-sm-0">Enviar</button>
+                        
+                            <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#myModal">
+                                Información
+                              </button>
+                              <!-- The Modal -->
+                            <div class="modal" id="myModal">
+                                <div class="modal-dialog">
+                                <div class="modal-content">
+                            
+                                    <!-- Modal Header -->
+                                    <div class="modal-header">
+                                    <h4 class="modal-title">Información*</h4>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+                            
+                                    <!-- Modal body -->
+                                    <div class="modal-body">
+                                    Aqui vas a poder expresarte como desees, para ello, simplemente puedes escribir directamente tu tarian o introducir imágenes y otros archivos en el simbolo click que tienes a la izquierda. También podras configurar parte de la web en la rueda de la izquierda. RECUERDA QUE TARIAN SOLO ADMITE HASTA UN MÁXIMO DE 500 CARÁCTERES.
+                                    <br>
+                                    <br>
+                                    LOS FORMATOS QUE ADMITE TARIAN SON:
+                                    <br>
+                                    <br>
+                                    - FOTOS: PNG, JPG Y JPEG
+                                    <br>
+                                    - VIDEO: MP4
+                                    <br>
+                                    - ARCHIVOS: PDF
+                                    <br>
+                                    <br>
+                                    *ASEGÚRATE DE QUE LOS ARCHIVOS NO TENGAN MAS PUNTOS EN SU NOMBRE COMPLETO ANTES DE .pdf, .png, .jpg, etc.
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../jquery-3.6.3.js"></script>
+    <link rel="stylesheet" href="../../../boostrap_arch/bootstrap.min.css">
+    <script src="../../../boostrap_arch/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="./css/usuarios.css">
+    <script src="./explorar.js"></script>
+    <title>Explorador</title>
+</head>
+<body>
+    <div id="container" class="container-fluid">
+        <header>
+            <div class="row align-items-center py-3">
+                <div class="col-6 col-sm-8">
+                    <div class="offcanvas offcanvas-start bg-warning" id="demo">
+                        <div class="offcanvas-header">
+                          <h1 class="offcanvas-title">Elige una opción</h1>
+                          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <a href="../../../index.html" data-toggle="tooltip" title="Vuelve a tu inicio" class="text-decoration-none btn btn-dark" >HOME</a>
+                          <a id="inicio" data-toggle="tooltip" title="Vuelve a tu inicio" class="text-decoration-none btn btn-dark" >Inicio</a>
+                                <a class="text-decoration-none btn btn-dark" href="#" data-toggle="tooltip" title="busca a tus amigos">Explorar</a>
+                                <div class="row mt-3">
+                                    <div class="col">
+                                        <a id="misTarians" class="text-decoration-none btn btn-dark" href="" data-toggle="tooltip" title="busca a tus amigos">Mis tarians</a>
+                                        <a id="favoritos" class="text-decoration-none btn btn-dark" href="#" data-toggle="tooltip" title="busca a tus amigos">Favoritos<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill mb-1 mx-1" viewBox="0 0 16 16">
+                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                                          </svg></a>
+                                    </div>
+                                </div>
+                        </div>
+                      </div>
+                      
+                      <!-- Button to open the offcanvas sidebar -->
+                      <button class="btn btn-warning mx-5" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                          </svg>
+                      </button>
+                      <input type="hidden" id="idUser" name="idUser">
+                </div>
+                <div class="col-4 text-end px-5">
+                    <img src="../../../img/logo.png" alt="logo" style="width: 80px; height: 80px;">
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="row justify-content-center">
+                <div class="col-10 col-lg-7">
+                    <div class="input-group">
+                        <span class="input-group-text bg-warning p-0 border-0 m-0"><button class="btn btn-warning"><svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 72 72" width="30" height="30"><path d="M 31 11 C 19.973 11 11 19.973 11 31 C 11 42.027 19.973 51 31 51 C 34.974166 51 38.672385 49.821569 41.789062 47.814453 L 54.726562 60.751953 C 56.390563 62.415953 59.088953 62.415953 60.751953 60.751953 C 62.415953 59.087953 62.415953 56.390563 60.751953 54.726562 L 47.814453 41.789062 C 49.821569 38.672385 51 34.974166 51 31 C 51 19.973 42.027 11 31 11 z M 31 19 C 37.616 19 43 24.384 43 31 C 43 37.616 37.616 43 31 43 C 24.384 43 19 37.616 19 31 C 19 24.384 24.384 19 31 19 z"/></svg></button></span>
+                        <input id="search" type="text" class="form-control bg-warning border-0 fw-bold m-0 p-0" aria-label="Amount (to the nearest dollar)">
+                        <span class="input-group-text bg-warning p-0 border-0 m-0"><button id="close" class="btn btn-warning"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                          </svg></button></span>
+                      </div>
+                </div>
+            </div>
+            <div id="usuarios" class="row justify-content-center">
+              
+            </div>
+        </main>
+    </div>
+</body>
+</html>

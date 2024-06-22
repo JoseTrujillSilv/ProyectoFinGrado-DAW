@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../boostrap_arch/bootstrap.min.css">
+    <script src="../../../boostrap_arch/bootstrap.bundle.min.js"></script>
+    <style>
+        body{
+            background-color: #333333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <main>
+                <div class="row justify-content-center mt-5">
+                    <div class="col-10 col-sm-6 col-lg-3 bg-light mx-3 rounded">
+                        <div class="row">
+                            <div class="col-12 mt-4 justify-content-center">
+                                <p class="text-center" id="keyss"></p>
+                                <p class="text-center" style="color: red;">*ESTE USUARIO TE HA BLOQUEADO</p>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center py-3">
+                            <div class="col-12 text-center">
+                                    <p>Para voler a tu inicio pincha en Volver.</p>
+                                    <button onclick="eventoInicio()" id="inicio" class="btn btn-warning">Volver a inicio</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    function eventoInicio() {
+                        let idUser = window.location.href.split('?')[1].split('=')[1];
+
+                        window.location.replace('../accesPrinc.php?id='+idUser); 
+                    }
+                </script>
+        </main>
+    </div>
+</body>
+</html>

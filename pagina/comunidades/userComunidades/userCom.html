@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../jquery-3.6.3.js"></script>
+    <link rel="stylesheet" href="../../../boostrap_arch/bootstrap.min.css">
+    <script src="../../../boostrap_arch/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="./css/userCom.css">
+    <script src="./userCom.js"></script>
+    <title>Explorador de Comunidades</title>
+</head>
+<body>
+    <div id="container" class="container-fluid">
+        <header>
+            <nav class="navbar navbar-expand-sm navbar-dark p-3" style="background: none;">
+                <div class="container-fluid">
+                  <img src="../../../img/logo.png" alt="" width="60px" height="60px"  style="margin-right: 10px;">
+                  <button class="navbar-toggler border-warning" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                    <span><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#ffc107" class="bi bi-list" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                    </svg></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav">
+                      <li class="nav-item">
+                        <a class="nav-link text-warning" href="../../../index.html">HOME</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link text-warning" href="../../indice.html">Atras</a>
+                      </li>
+                    </ul>
+                    <span class="text-end text-light">Explorador de comunidades</span>
+                  </div>
+                </div>
+              </nav> 
+        </header>
+        <main>
+            <div class="row justify-content-center mt-5">
+                <div class="col-10 col-lg-7">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text bg-warning p-0 border-0"><button class="btn btn-warning"><svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 72 72" width="30" height="30"><path d="M 31 11 C 19.973 11 11 19.973 11 31 C 11 42.027 19.973 51 31 51 C 34.974166 51 38.672385 49.821569 41.789062 47.814453 L 54.726562 60.751953 C 56.390563 62.415953 59.088953 62.415953 60.751953 60.751953 C 62.415953 59.087953 62.415953 56.390563 60.751953 54.726562 L 47.814453 41.789062 C 49.821569 38.672385 51 34.974166 51 31 C 51 19.973 42.027 11 31 11 z M 31 19 C 37.616 19 43 24.384 43 31 C 43 37.616 37.616 43 31 43 C 24.384 43 19 37.616 19 31 C 19 24.384 24.384 19 31 19 z"/></svg></button></span>
+                        <input id="search" type="text" class="form-control bg-warning border-0 fw-bold" aria-label="Amount (to the nearest dollar)">
+                        <span class="input-group-text bg-warning p-0 border-0"><button class="btn btn-warning" id="close"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                          </svg></button></span>
+                      </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div id="comunidades" class="row justify-content-center">
+              
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

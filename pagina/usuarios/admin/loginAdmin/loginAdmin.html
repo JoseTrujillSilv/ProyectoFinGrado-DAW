@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../../jquery-3.6.3.js"></script>
+    <link rel="stylesheet" href="../../../../boostrap_arch/bootstrap.min.css">
+    <script src="../../../../boostrap_arch/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="../../css/usuarios.css">
+    <script src="./loginAdmin.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+      <header>
+        <nav class="navbar navbar-expand-sm navbar-dark p-3" style="background: none;">
+            <div class="container-fluid">
+              <img src="../../../../img/logo.png" alt="" width="60px" height="60px"  style="margin-right: 10px;">
+              <button class="navbar-toggler border-warning" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#ffc107" class="bi bi-list" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                </svg></span>
+              </button>
+              <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link text-warning" href="../../../../index.html">HOME</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-warning" href="../../../indice.html">Atras</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav> 
+    </header>
+        <main>
+                <div class="row justify-content-center mt-5" style="height: 400px;">
+                    <div class="bg-light rounded" style="width: 300px; height: 280px;">
+                        <div class="row justify-content-center ">
+                            <div class="col-10 d-flex text-center">
+                                <form action="./login.php" method="post">
+                                    <input type="hidden" id="idCom" name="idCom">
+                                    <div class="mt-2">
+                                        <label class="fs-5" for="password">Keyss de Administrador:</label>
+                                    </div>
+                                    <div class="d-flex justify-content-center">
+                                        <div class="input-group">
+                                            <span id="ojo2" class="input-group-text" id="basic-addon1">
+                                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                                <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
+                                <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
+                              </svg>
+                                    </span>
+                                    <input id="keyss" name="keyss" type="password" class="form-control bg-transparent borderInc" placeholder="keyss" aria-label="Input group example" aria-describedby="basic-addon1" required>
+                                          </div>
+                                    </div>
+                                    <div class="mt-2">
+                                        <label class="fs-5" for="password">Contraseña:</label>
+                                    </div>
+                                    <div class="d-flex justify-content-center">
+                                        <div class="input-group">
+                                            <span id="ojo" class="input-group-text" id="basic-addon1">
+                                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                                <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
+                                <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
+                              </svg>
+                                    </span>
+                                    <input id="password" name="password" type="password" class="form-control bg-transparent borderInc" placeholder="password" aria-label="Input group example" aria-describedby="basic-addon1" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}" required data-bs-toggle="tooltip" title="La contraseña debe llevar una mayúscula, una minúscula y un dígito y ser de 8 carácteres como mínimo">
+                                          </div>
+                                    </div>
+                                    <div class="mt-4">
+                                        <button class="btn btn-warning" type="submit">Enviar</button>
+                                        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#myModal">
+                                            Información
+                                          </button>
+                                          <!-- The Modal -->
+                                        <div class="modal" id="myModal">
+                                            <div class="modal-dialog">
+                                            <div class="modal-content">
+                                        
+                                                <!-- Modal Header -->
+                                                <div class="modal-header">
+                                                <h4 class="modal-title">Información*</h4>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                                </div>
+                                        
+                                                <!-- Modal body -->
+                                                <div class="modal-body">
+                                                En este apartado debes introducir la clave de tu usuario y el keyss de tu usuario correspondiente para poder entrar, La contraseña debe llevar una mayúscula, una minúscula y un dígito y ser de 8 carácteres como mínimo.
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </main>
+    </div>
+</body>
+</html>

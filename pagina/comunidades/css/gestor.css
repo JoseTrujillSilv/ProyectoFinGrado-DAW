@@ -1,0 +1,42 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #333333;
+}
+
+label{
+    font-size: 1.5vw;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+}
+
+main{
+    width: 100%;
+    height: 75vh;
+}
+
+footer{
+    height: 25vh;
+}
+
+
+#ojo{
+    cursor: pointer;
+}
+
+#ojo2{
+    cursor: pointer;
+}
+
+button{
+    margin-top: 2vh;
+}
+
+.borderInc{
+    border-color: red;
+}
+
